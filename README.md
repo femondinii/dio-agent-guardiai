@@ -1,160 +1,87 @@
-# 🤖 DIO Agent
+# DIO Agent — GuardIA
 
-> Seu mentor de Inteligência Artificial para aprender mais e melhor na [DIO](https://dio.me).
-
-O **DIO Agent** é um agente de IA que acompanha você na sua jornada de estudos. Ele conhece as experiências da DIO (Bootcamps, Formações, Cursos, Desafios e muito mais) e ajuda você a estudar com mais clareza, destravar desafios e entender qualquer conceito.
-
-E você não precisa instalar nada complicado. Em **3 passos simples**, o seu mentor de IA estará pronto para usar.
+Especialização do [DIO Agent](https://github.com/digitalinnovationone/dio-agent) com foco em **segurança da informação**.
 
 ---
 
-## ✨ Antes de começar: dois conceitos rápidos
+## Sobre o projeto
 
-Para usar o DIO Agent, basta entender duas palavras. As duas estão no [Glossário completo](docs/glossary.md), mas aqui vai a versão rápida:
+O DIO Agent é um agente de IA mentor de estudantes da [DIO](https://dio.me). Esta versão — chamada de **GuardIA** — adiciona ao agente base um conjunto de conhecimentos e skills voltados para segurança da informação, com o objetivo de ensinar desenvolvedores a pensar em segurança desde a primeira linha de código.
 
-- 🧠 **Agente de IA:** um chatbot comum responde perguntas, como um buscador mais esperto. Um *agente* de IA vai além: ele lê, planeja e executa passos para te ajudar a alcançar um objetivo. É a diferença entre alguém que te explica o caminho e alguém que caminha junto com você. O DIO Agent é um agente desse tipo: um tutor particular que acompanha a sua evolução.
-
-- 🖥️ **Harness:** é o programa onde a conversa com o agente acontece. Vale a comparação: o agente é o professor, e o harness é a sala de aula. O mesmo professor pode dar aula em salas diferentes. Por isso o DIO Agent funciona em qualquer harness: você escolhe a "sala" no Passo 1, e o seu mentor continua o mesmo.
-
-Pronto. Com isso já dá para começar.
+A especialização foi escolhida porque a maioria dos cursos de programação ensina código funcional, mas raramente ensina código seguro. Integrar essa perspectiva dentro do fluxo natural de aprendizado da DIO faz com que o estudante absorva boas práticas de segurança sem precisar buscar esse conteúdo em outro lugar.
 
 ---
 
-## 🎯 O que o DIO Agent faz por você
+## O que foi adicionado
 
-| Você precisa de... | O DIO Agent... |
-|--------------------|----------------|
-| Saber por onde começar | Monta um plano de estudos no seu ritmo |
-| Destravar um desafio | Te guia até a solução, sem entregar a resposta pronta |
-| Entender um conceito | Explica de forma simples, com analogias e exemplos |
+### Base de conhecimento: `agent/knowledge/security-basics.md`
 
-Ele conhece os formatos da DIO: Bootcamps, Formações, Acelerações, Cursos, English4Tech, Desafios de Código, Desafios de Projeto, Desafios Criativos, Lives e Mentorias. Assim, as recomendações sempre apontam para algo que você já tem na plataforma.
+Arquivo novo que serve de referência teórica para o agente sempre que o assunto envolver segurança. Contém:
 
----
+- Definição de **vulnerabilidade**, **ameaça** e **risco**
+- **Tríade CIA** (Confidencialidade, Integridade, Disponibilidade) com exemplos concretos
+- **10 boas práticas de segurança de código**: validação de entrada, hash de senhas, menor privilégio, gerenciamento de recursos, logging, limitação de tentativas, patch de dependências, análise estática, defesa em profundidade e testes de segurança
 
-## 🚀 Comece em 3 passos
+### Skill: `vulnerability-analysis/SKILL.md`
 
-### 1️⃣ Instale um Harness
+Guia o agente a analisar código em busca de falhas de segurança. O processo tem 6 etapas:
 
-O harness é o programa que dá vida ao agente. Recomendamos o **Google Antigravity**, que tem limites de uso mais generosos para quem está começando. Mas qualquer harness moderno funciona.
+1. Entender o contexto (linguagem, escopo)
+2. Identificar a vulnerabilidade (injeção, credenciais, controle de acesso, erros, recursos)
+3. Classificar pelo **MITRE ATT&CK** (ID e tática)
+4. Avaliar o risco pela **tríade CIA** com severidade (Baixa / Média / Alta)
+5. Orientar a mitigação — sem entregar a correção pronta
+6. Confirmar o aprendizado com perguntas de verificação
 
-| Harness | Documentação oficial |
-|---------|----------------------|
-| Google Antigravity (recomendado) | https://antigravity.google/docs |
-| Claude Code | https://docs.claude.com/en/docs/claude-code |
-| Codex | https://developers.openai.com/codex |
-| OpenCode | https://opencode.ai/docs |
-| Hermes | https://hermes-agent.nousresearch.com/docs |
+### Skill: `cybersecurity-learning-path/SKILL.md`
 
-Escolha um e siga o passo a passo da documentação oficial dele. Cada documentação já traz tudo certinho para o seu sistema, então a instalação é tranquila.
+Monta trilhas de estudo personalizadas para quem quer entrar na área de cibersegurança. Cobre as principais áreas de atuação (Blue Team/SOC, Red Team/Pentest, AppSec, Cloud Security, GRC, Forense Digital) e organiza o plano em três fases: fundamentos → conhecimento específico → prática e certificação. Conecta com experiências da DIO e recursos externos gratuitos.
 
-### 2️⃣ Configure o DIO Agent
+### Skill: `devsecops-review/SKILL.md`
 
-Agora você vai baixar este repositório para o seu computador. Escolha a forma mais simples para você:
-
-**Opção A: com Git** (se você já usa Git)
-
-```bash
-git clone https://github.com/digitalinnovationone/dio-agent.git
-```
-
-**Opção B: baixando o .zip** (se você não usa Git)
-
-Na página do repositório no GitHub, clique no botão verde **Code** e depois em **Download ZIP**. Em seguida, extraia a pasta em um lugar fácil de encontrar.
-
-Com o repositório baixado, abra a pasta `dio-agent` no harness que você instalou. Cada harness tem o seu jeito de abrir uma pasta de projeto, e a documentação dele mostra como fazer isso.
-
-E é só isso! O harness lê automaticamente o arquivo `AGENTS.md` e o agente já sabe quem é: o seu mentor de estudos da DIO.
-
-> 🔄 **Fique de olho nas atualizações.** Não importa se você usou o Git ou o .zip: o repositório do DIO Agent evolui com o tempo. De tempos em tempos, vale voltar aqui e pegar a versão mais recente. Quem usou Git pode rodar `git pull` (ou pedir pro próprio DIO Agent rodar); quem baixou o .zip pode baixar de novo. Assim o seu mentor está sempre com o melhor que a gente tem a oferecer.
-
-### 3️⃣ Hands On!
-
-Agora é só conversar. Você pode falar naturalmente, com as suas palavras. Mas, principalmente nas primeiras vezes, vale usar um modelo de prompt pronto: é só copiar e preencher os campos entre colchetes. Quanto mais contexto você dá, melhor o agente ajuda.
-
-**🗺️ Plano de estudos**
-
-```
-Quero montar um plano de estudos (se possível, com materiais complementares).
-- Meu objetivo: [ex: aprender mais sobre IA, ser dev back-end, concluir um bootcamp]
-- Experiência ou carreira da DIO: [URL ou nome do bootcamp/formação, ou de uma carreira da DIO]
-- Meu nível hoje: [iniciante, intermediário, avançado]
-- Tempo disponível: [ex: 1 hora por dia, de segunda a sexta]
-```
-
-**🔓 Destravar desafio**
-
-```
-Estou travado em um Desafio de [Código, Projeto ou Criativo] da DIO.
-- O que o desafio pede: [cole o enunciado ou descreva]
-- Onde eu travei: [explique o ponto da dificuldade]
-- Meu código atual: [cole aqui, se for Desafio de Código]
-- Link do repositório base: [cole aqui, se for Desafio de Projeto]
-Me ajuda a destravar sem dar a resposta pronta.
-```
-
-**💡 Explicar conceito**
-
-```
-Me explica o conceito de [ex: API, laço de repetição, herança].
-- Meu nível: [nunca vi, já ouvi falar, quero aprofundar]
-- Onde apareceu: [ex: no curso X de um bootcamp] (opcional)
-```
-
-Não precisa de comando especial nem de formato perfeito: o agente conduz a conversa a partir daí e pede mais detalhes se precisar.
+Orienta a revisão de código ou Pull Requests com olhar de segurança antes do merge ou deploy. Cobre as categorias de risco mais comuns em mudanças de código (entradas não validadas, autenticação, dependências, segredos, criptografia, sessão), apresenta um fluxo CI/CD DevSecOps recomendado e lista ferramentas open-source para cada etapa (Bandit, Semgrep, CodeQL, GitLeaks, OWASP ZAP, entre outras).
 
 ---
 
-## 🧩 As skills do agente
+## O que foi alterado
 
-Uma **skill** é uma habilidade do agente, descrita em um guia passo a passo. O DIO Agent vem com três:
+### `AGENTS.md`
 
-| Skill | Para que serve |
-|-------|----------------|
-| [Plano de estudos](skills/study-plan/SKILL.md) | Organiza o que estudar, em que ordem e em quanto tempo |
-| [Destravar desafio](skills/unblock-challenge/SKILL.md) | Conduz você até a solução de um desafio, sem dar a resposta pronta |
-| [Explicar conceito](skills/explain-concept/SKILL.md) | Explica conceitos de forma didática, com analogias e exemplos |
+- Adicionada `agent/knowledge/security-basics.md` na seção de base de conhecimento
+- Adicionadas as três novas skills na tabela de skills (`vulnerability-analysis`, `cybersecurity-learning-path`, `devsecops-review`)
+- Adicionado o limite de segurança: o agente nunca entrega correções completas de vulnerabilidades sem antes conduzir o raciocínio do estudante
 
-Você não precisa "chamar" uma skill. O agente percebe o que você precisa e usa a skill certa sozinho.
+### `agent/persona.md`
+
+- Adicionada a seção **Segurança da informação**: descreve o conhecimento do agente em CIA, vulnerabilidade, ameaça e risco, especifica quando acionar a skill `vulnerability-analysis` e reforça que o objetivo é ensinar a pensar em segurança, não apenas apontar e corrigir
 
 ---
 
-## 🗂️ Estrutura do repositório
+## Estrutura dos arquivos adicionados
 
 ```
-dio-agent/
-├── README.md                        Este guia
-├── AGENTS.md                        Definição do agente (lida por qualquer harness)
-├── CLAUDE.md                        Atalho para o Claude Code
-│
+dio-agent-guardiai/
+├── AGENTS.md                            ← alterado
 ├── agent/
-│   ├── persona.md                   A personalidade e o tom do agente
+│   ├── persona.md                       ← alterado
 │   └── knowledge/
-│       ├── dio-platform.md          O que é a DIO
-│       └── learning-experiences.md  Os formatos de aprendizado da DIO
-│
-├── skills/
-│   ├── README.md                    O que são skills
-│   ├── study-plan/                  Skill: plano de estudos
-│   ├── unblock-challenge/           Skill: destravar desafio
-│   └── explain-concept/             Skill: explicar conceito
-│
-└── docs/
-    └── glossary.md                  Glossário de termos
+│       └── security-basics.md           ← novo
+├── vulnerability-analysis/
+│   └── SKILL.md                         ← novo
+├── cybersecurity-learning-path/
+│   └── SKILL.md                         ← novo
+└── devsecops-review/
+    └── SKILL.md                         ← novo
 ```
 
-> 🔍 **Por que funciona em qualquer harness?** O coração do projeto é o arquivo `AGENTS.md`, um padrão aberto que harnesses modernos sabem ler. O `CLAUDE.md` apenas aponta para ele, então você pode usar o harness que preferir.
-
 ---
 
-## 📖 Glossário rápido
+## Como rodar
 
-Termos como *agente*, *harness*, *skill* e *prompt* estão explicados com analogias simples no **[Glossário completo](docs/glossary.md)**. Se algum termo soar estranho, comece por lá.
+Este projeto segue o padrão `AGENTS.md`. Qualquer harness compatível (Google Antigravity, Claude Code, Codex, Cursor, Gemini CLI) lê o arquivo automaticamente ao abrir a pasta.
 
----
+1. Clone o repositório
+2. Abra a pasta no harness de sua preferência
+3. Comece a conversar — o agente já carrega a especialização em segurança
 
-## 💬 Sobre este projeto
-
-O DIO Agent foi criado para acompanhar você desde o início dos Bootcamps e Formações da DIO. A ideia é simples: aprender na era da IA fica mais fácil quando você tem um mentor disponível a qualquer hora.
-
-Bons estudos, e vem com a gente. 🚀
+Consulte a [documentação do harness](https://antigravity.google/docs) para detalhes de instalação.
